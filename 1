@@ -1,0 +1,46 @@
+package pr_04;
+
+import java.util.Scanner;
+
+public class Pr_04 {
+ 
+ static Scanner sc = new Scanner(System.in);
+
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  
+  float op1 = readOperand("첫번째");
+  float op2 = readOperand("두번째");
+  String operator;
+  
+  //에러가 발생하지 않도록 연산자를 입력 받음
+  System.out.print("연산자(=,-,*,/)");
+  operator = sc.nextLine();
+  
+  //각각의 연산자(+,-,*,/,)에 대해서 해당하는 연산을 수행하도록 수정
+  switch(operator) {
+  case"+":
+  System.out.println(op1 + "+" +op2 +"="+(op1 + op2));
+  
+  }
+  sc.close();
+
+
+}
+
+ private static float readOperand(String str) {
+  // TODO Auto-generated method stub
+  float operand = 0;
+  while(true) {
+   System.out.print(str + ":");
+   try {
+    operand = Float.valueOf(sc.nextLine());
+    return operand;
+   }catch(NumberFormatException e) {
+    continue;
+    
+  }
+  
+ }
+}
+}
